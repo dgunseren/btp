@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="108dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:onClick="save"
+        android:text="save" />
+
+
+    <Button
+        android:id="@+id/button_load_real"
+        android:layout_width="109dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_save"
+        android:layout_alignStart="@+id/button_save"
+        android:layout_marginStart="-137dp"
+        android:layout_marginTop="52dp"
+        android:onClick="load"
+        android:text="Load" />
+
+    <Button
+        android:id="@+id/fft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_save"
+        android:layout_alignStart="@+id/button_save"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="149dp"
+        android:layout_marginTop="18dp"
+        android:onClick="FFT_INIT"
+        android:text="FFT" />
+
+    <Button
+        android:id="@+id/line_count"
+        android:layout_width="297dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_save"
+        android:layout_alignStart="@+id/button_save"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-95dp"
+        android:layout_marginTop="193dp"
+        android:onClick="openActivity2"
+        android:text="PROCEED" />
+
+    <Button
+        android:id="@+id/line_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_save"
+        android:layout_alignStart="@+id/button_save"
+        android:layout_marginStart="-133dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="-5dp"
+        android:onClick="LineCounter"
+        android:text="DATA SET" />
+
+    <Button
+        android:id="@+id/dummy"
+        android:layout_width="299dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_save"
+        android:layout_alignStart="@+id/button_save"
+        android:layout_marginStart="-96dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="257dp"
+        android:onClick="dummy_operation"
+        android:text="DUMMY" />
+
+    <Button
+        android:id="@+id/blu"
+        android:layout_width="297dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_save"
+        android:layout_alignStart="@+id/button_save"
+        android:layout_marginStart="-97dp"
+        android:layout_marginLeft="-90dp"
+        android:layout_marginTop="130dp"
+        android:onClick="blu"
+        android:text="BLUETOOTH" />
+</RelativeLayout>
