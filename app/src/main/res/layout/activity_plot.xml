@@ -13,16 +13,27 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_save"
         android:layout_alignStart="@+id/button_save"
-        android:layout_marginTop="500dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="100dp"
 
         android:onClick="openActivityMain"
         android:text="BACK" />
+    <Button
+        android:id="@+id/kol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_save"
+        android:layout_alignStart="@+id/button_save"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="190dp"
+
+        android:onClick="openError"
+        android:text="ANALYZE" />
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/graph"
         android:layout_width="match_parent"
-        android:layout_height="501dp"
+        android:layout_height="400dp"
         android:onClick="plot"
         android:orientation="horizontal"
 

@@ -171,20 +171,38 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+    double[] amp_sorted= new double[line_number/2];
+
     public void FFT_INIT(View v) {
         Fft.transform(input_real, input_img);
         Toast.makeText(this, "Fourier Transform Initialized", LENGTH_SHORT).show();
-        for (int i = 0; i < line_number-1; i++) {
+        for (int i = 0; i < line_number; i++) {
             Complex phasor = new Complex(input_real[i], input_img[i]);
             amp[i] = phasor.abs()/line_number;
             stringArray_amp[i] = Double.toString(amp[i]);
-            System.out.println(amp[i]);
+           // System.out.println(amp[i]);
         }
+       amp_sorted= Freq.MaxFrequency(amp,line_number);
         mEditText.getText().clear();
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < line_number-1; i++) {
+        for (int i = 0; i < line_number; i++) {
             sb.append(stringArray_amp[i]);
             sb.append("\n");
+        }
+        int[] index=new int[line_number/2];
+
+        for(int s=line_number/2-1;s>=0;s--){
+            for(int y=0;y<line_number/2-1;y++){
+                if(amp_sorted[s]==amp[y]){
+                    index[s]=y;
+                    //peak_matrix[s]=peakORnot[y];
+                }
+            }
+        }
+        for(int i=0;i<line_number/2-1;i++)
+        {
+          // System.out.println(index[i]);
+
         }
         mEditText.setText(sb.toString());
     }
