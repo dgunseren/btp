@@ -32,7 +32,7 @@ public class plot extends AppCompatActivity {
     double[][] frequency_matrix;
     double [] peak_matrix;
     double[] peakORnot;
-    double[] malfunction;
+   public static double[][] malfunction;
 
 
 
@@ -50,7 +50,7 @@ public class plot extends AppCompatActivity {
         frequency_matrix=new double[line_number/2][2];
         peak_matrix=new double[line_number/2];
         peakORnot=new double[line_number];
-        malfunction=new double[5];
+        malfunction=new double[5][1];
         //amp_sorted= new double[line_number/2];
         GraphView graph = (GraphView) findViewById(R.id.graph);
         FileInputStream fisr = null;
@@ -123,29 +123,16 @@ int gh=0;
         for(int le=line_number/2-1;0<=le;le--){
             if(gh==5){break;}
 if(frequency_matrix[le][1]!=0){
-    malfunction[gh]=frequency_matrix[le][0]*2;
+    malfunction[gh][0]=frequency_matrix[le][0]*2;
     gh++;
 
 }
         }
-        for(int ss=0;ss<5;ss++){
-            System.out.println(malfunction[ss]);
+    //    for(int ss=0;ss<5;ss++){
+      //      System.out.println(malfunction[ss]);
 
-        }
+        //}
 
-       //System.out.println(Arrays.deepToString(malfunction).replace("], ", "]\n").replace("[[", "[").replace("]]", "]"));
-
-//        int[] index=new int[amp_sorted.length];
-////
-//        for(int s=line_number/2-1;s>=0;s--){
-//            for(int y=0;y<line_number/2-1;y++){
-//                if(amp_sorted[s]==doubleArray[y]){
-//                    index[s]=y;
-////                    // peak_matrix[s]=peakORnot[y];
-//                   // System.out.println(index[s]);
-//                }
-//            }
-//        }
         graph.addSeries(series);
         graph.getViewport().setMinX(0);
         graph.getViewport().setMaxX(1020);
@@ -163,7 +150,9 @@ if(frequency_matrix[le][1]!=0){
     }
     public void openError(View v) {
         Intent intent_2 = new Intent(this, error.class);
-        intent_2.putExtra("malfunction", malfunction);
+        Bundle b = new Bundle();
+        b.putSerializable("malfunction", malfunction);
+        intent_2.putExtras(b);
         startActivity(intent_2);
     }
 

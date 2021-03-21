@@ -25,7 +25,7 @@
         android:layout_marginTop="400dp"
         android:layout_marginLeft="190dp"
 
-        android:onClick="INIT"
+        android:onClick="showAlertDialogButtonClicked"
         android:text="ANALYZE" />
 
 
