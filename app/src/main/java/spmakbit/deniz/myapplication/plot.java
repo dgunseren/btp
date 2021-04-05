@@ -135,7 +135,7 @@ if(frequency_matrix[le][1]!=0){
 
         graph.addSeries(series);
         graph.getViewport().setMinX(0);
-        graph.getViewport().setMaxX(1020);
+        graph.getViewport().setMaxX(line_number/2);
 
 
         graph.getViewport().setYAxisBoundsManual(true);

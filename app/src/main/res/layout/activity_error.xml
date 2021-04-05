@@ -15,7 +15,7 @@
         android:layout_marginLeft="100dp"
 
         android:onClick="openplot"
-        android:text="BACK" />
+        android:text="RESET" />
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
@@ -27,7 +27,17 @@
 
         android:onClick="showAlertDialogButtonClicked"
         android:text="ANALYZE" />
+    <Button
+        android:id="@+id/plot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_save"
+        android:layout_alignStart="@+id/button_save"
+        android:layout_marginTop="440dp"
+        android:layout_marginLeft="150dp"
 
+        android:onClick="goback"
+        android:text=" BACK" />
 
     <TextView
         android:id="@+id/textView2"

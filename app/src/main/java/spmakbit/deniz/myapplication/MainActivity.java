@@ -1,16 +1,27 @@
+   /*
+  Bachelors Project for Mechanical Engineering
+  Spring 2021
+   @Author: Deniz Gunseren
+   Correspondence:dgunseren@gmail.com
+
+
+  */
 package spmakbit.deniz.myapplication;
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
 import static android.widget.Toast.LENGTH_SHORT;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
     public void blu(View v) {
         Intent intent_new = new Intent(this, blu_activity.class);
         startActivity(intent_new);
+    }
+    public void explore(View v){
+        Intent intent_newer = new Intent(this, choose.class);
+        startActivity(intent_newer);
+
     }
     public void LineCounter(View v) {
         FileInputStream fisr = null;
