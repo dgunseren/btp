@@ -1,0 +1,40 @@
+#include <SD.h>
+#include <SPI.h>
+#include <SoftwareSerial.h>
+const int chipSelect= 53;
+
+SoftwareSerial blue(26,24);
+
+File printFile;
+String buffer;
+boolean SDfound;
+void setup() {
+  Serial.begin(9600);
+    blue.begin(9600);
+    delay(50);
+  if (SDfound == 0) {
+    if (!SD.begin(53)) {
+      Serial.print("The SD card cannot be found");
+      while(1);
+    }
+  }
+  SDfound = 1;
+  printFile = SD.open("iremu.txt");
+
+  if (!printFile) {
+    Serial.print("The text file cannot be opened");
+    while(1);
+  }
+
+  while (printFile.available()) {
+    buffer = printFile.readStringUntil('\n');
+    Serial.println(buffer); 
+    blue.println(buffer);
+    delay(50);
+       
+  }
+  printFile.close();
+}
+void loop() {
+   //empty
+}

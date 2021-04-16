@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     double[] dummy_sine;
     double x=0;
     int i = 0;
-
+    int encounter=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void LineCounter(View v) {
         FileInputStream fisr = null;
+        encounter=1;
         try {
             fisr = openFileInput(FILE_NAME_DUMMY);
             InputStreamReader isr = new InputStreamReader(fisr);
@@ -98,16 +99,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void dummy_operation(View v){
-        dummy_series= new double[line_number];
-        dummy_sine= new double[line_number];
-        stringArray_dummy= new String[line_number];
+        line_number=2048;
+        dummy_series= new double[2048];
+        dummy_sine= new double[2048];
+        stringArray_dummy= new String[2048];
         StringBuilder sb_dummy = new StringBuilder();
-        stringArray_real= new String[line_number];
-        stringArray_img= new String[line_number];
-        input_real = new double[line_number];
-        input_img = new double[line_number];
-        stringArray_amp = new String[line_number];
-        amp = new double[line_number];
+        stringArray_real= new String[2048];
+        stringArray_img= new String[2048];
+        input_real = new double[2048];
+        input_img = new double[2048];
+        stringArray_amp = new String[2048];
+        amp = new double[2048];
         for (int i = 0; i < dummy_series.length; i++) {
             x=x+0.00048828125;
             dummy_series[i]=x;
@@ -117,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
             stringArray_real[i]=String.valueOf(dummy_sine[i]);
             stringArray_img[i]=String.valueOf(dummy_sine[i]*0);
             input_real[i]=dummy_sine[i];
-            input_real[i]=dummy_sine[i]*0;
+            input_img[i]=dummy_sine[i]*0;
             System.out.println(stringArray_real[i]);
            sb_dummy.append(stringArray_real[i]).append("\n");
         }
